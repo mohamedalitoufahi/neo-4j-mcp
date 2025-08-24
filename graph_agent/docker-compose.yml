@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  graph-agent:
+    build: .
+    container_name: graph_agent
+    ports:
+      - "8052:8052"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app
+      - ./formulai-dc0eba0c6712.json:/app/formulai-dc0eba0c6712.json
+    depends_on:
+      - neo4j-mcp-server
+  neo4j-mcp-server:
+    build: ../mcp-server
+    container_name: neo4j_mcp_server
+    ports:
+      - "8051:8051"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ../mcp-server:/app
