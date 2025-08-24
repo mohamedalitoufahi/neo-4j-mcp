@@ -7,9 +7,13 @@ from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Google Gemini LLM configuration (same as your crew.py)
-file_path = r""
+file_path = os.getenv("GOOGLE_CLOUD_CREDENTIALS")
 
 try:
     # Load the JSON credentials file
