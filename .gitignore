@@ -1,0 +1,9 @@
+config.json
+config.yml
+config.yaml
+*.config
+.env
+.env.local
+.env.development
+.env.test
+.env.production

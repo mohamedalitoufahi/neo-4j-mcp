@@ -5,13 +5,12 @@ from neo4j import GraphDatabase
 from typing import Optional, List, Dict, Any
 import json
 
-#load_dotenv("../.env")
-#transport = os.getenv("TRANSPORT")
+load_dotenv("../env")
 
 # Neo4j connection details
-NEO4J_URI = "bolt://34.9.136.88:7687"
-NEO4J_USERNAME = "neo4j"
-NEO4J_PASSWORD = "drugit-formulai"
+NEO4J_URI = os.getenv("NEO4J_URI")
+NEO4J_USERNAME = os.getenv("NEO4J_USERNAME")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 # Create an MCP server
 mcp = FastMCP(
