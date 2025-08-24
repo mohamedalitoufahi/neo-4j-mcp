@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  neo4j-mcp-server:
+    build: .
+    ports:
+      - "8051:8051"
+    #environment:
+    #  - TRANSPORT=streamable-http
+    restart: unless-stopped
+    container_name: neo4j-mcp-server
